@@ -32,8 +32,10 @@ const Hero = () => {
                 layout={'fill'}
 
             />
-            <nav className={`w-full fixed flex justify-center items-center  ${scrolled ? 'bg-gradient-to-l from-blue-700 to-blue-500 shadow-2xl ease-in duration-700 justify-between md:px-80  px-5 ' : ' duration-700'} `} >
-                <Image src={logo} alt={'Logo Mariachi'} className={`w-[250px] h-[70px]  md:w-[700px] md:h-[180px] ${scrolled ? 'md:w-[450px] md:h-[130px]' : ''}`} />
+            <nav className={`w-full fixed flex justify-center items-center  ${scrolled ? 'bg-gradient-to-l from-blue-700 to-blue-500 shadow-2xl ease-in duration-700 justify-between md:px-80  px-5 z-10 ' : ' duration-700'} `} >
+                <Link href={'#'}>
+                    <Image src={logo} alt={'Logo Mariachi'} className={`w-[250px] h-[70px]  md:w-[450px] md:h-[130px] ${scrolled ? 'md:w-[450px] md:h-[130px]' : ''}`} />
+                </Link>
                 <div className={`${scrolled ? '  gap-5 md:block hidden ' : 'hidden'}`}>
                     <Link href={'#'} className={`font-satoshi font-bold text-xl text-yellow-200 ${scrolled ? 'text-2xl mr-5' : ''}`}>Inicio</Link>
                     <Link href={'#about'} className={`font-satoshi font-bold text-xl text-yellow-200 ${scrolled ? 'text-2xl mr-5' : ''}`}>Nosotros</Link>
