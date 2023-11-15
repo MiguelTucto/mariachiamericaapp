@@ -39,8 +39,8 @@ const Form = () => {
         <>
             <div className={'md:px-80 px-10 md:py-[100px] pt-36 pb-10 flex md:flex-row flex-col '}>
                 <div className={'flex flex-col justify-center '}>
-                    <motion.h2 initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'font-bold md:text-8xl text-5xl '}>Realiza una cotización</motion.h2>
-                    <motion.p initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'md:pr-36 md:pt-10 pr-0 pt-2 font-sans'}>Para una mejor comunicación, completa el formulario y así poder concretar algo bonito. ¡No dudes en hacerlo!</motion.p>
+                    <motion.h2 initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'font-bold md:text-8xl text-5xl text-[#F5B83B]'}>Realiza una cotización</motion.h2>
+                    <motion.p initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'md:pr-36 md:pt-10 pr-0 pt-2 font-sans text-[#1F447F]'}>Para una mejor comunicación, completa el formulario y así poder concretar algo bonito. ¡No dudes en hacerlo!</motion.p>
                 </div>
                 <form onSubmit={formik.handleSubmit} className={'flex flex-col items-center p-5 shadow rounded-3xl sm:p-10 bg-blue-50 md:w-[700px] w-[300px] md:mt-0 mt-5'}>
                     <div className={'w-full'}>

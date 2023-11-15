@@ -40,7 +40,7 @@ const SocialNetwork = () => {
                     </Link>
                 </div>
                 <div className={'flex flex-col items-center'}>
-                    <motion.h2 initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'font-bold md:text-8xl text-5xl md:mt-20 mt-0 md:pl-0 pl-10'}>Nuestros Videoclips</motion.h2>
+                    <motion.h2 initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'font-bold md:text-8xl text-5xl md:mt-20 mt-0 md:pl-0 pl-10 text-[#F5B83B]'}>Nuestros Videoclips</motion.h2>
                     <div  className={'flex md:flex-row flex-col  gap-5 md:mt-36 mt-10 '}>
                         <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants}>
                             <iframe className={'md:w-[500px] md:h-[315px] w-[300px] h-[200px] rounded-2xl'}  src="https://www.youtube.com/embed/FrIb0RUE3cg" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>

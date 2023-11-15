@@ -3,14 +3,13 @@
 import { useSession } from "next-auth/react";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Image from "next/image";
-import mariachi from "@/public/mariachiamericagroup.jpg";
-import logo from "@/public/logov1-bgremoved.png";
 import Feature from "@/components/Feature";
 import SocialNetwork from "@/components/SocialNetwork";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Form from "@/components/Form";
+import TakeService from "@/components/TakeService";
+import PhoneContact from "@/components/PhoneContact";
 
 
 const Home = () => {
@@ -23,6 +22,12 @@ const Home = () => {
             </section>
             <section className={'min-h-screen bg-white'} id={'about'}>
                 <About />
+            </section>
+            <section className={'min-h-screen bg-blue-50'} id={'takeservice'}>
+                <TakeService />
+            </section>
+            <section className={'h-[500px]  '} id={'contact'} >
+                <PhoneContact />
             </section>
             <section className={'min-h-screen bg-blue-50'} id={'feature'}>
                 <Feature />
