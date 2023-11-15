@@ -1,4 +1,4 @@
-import Photo from '../public/aboutmariachiphoto.webp'
+import Photo from '@/public/aboutmariachiphoto.webp';
 import Image from "next/image";
 import {useEffect, useRef, useState} from "react";
 import Modal from "@/components/Modal";
@@ -31,7 +31,7 @@ const About = () => {
             <div className={'md:px-80 md:py-[100px] px-10 py-5 flex flex-col'} ref={text}>
                 <motion.h2 initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'font-bold md:text-8xl text-5xl text-[#F5B83B] '}>Mariachi America Ayacucho</motion.h2>
                 <motion.p initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'md:mt-10 mt-5 text-[#3B85F5]   font-sans text-justify'}>
-                    Somos un grupo de <a className={'text-[#F5B83B]'}>mariachi</a>  con mas de 25 años de experiencia, nos caracterizamos por brindar un servicio de calidad y profesionalismo, contamos con un amplio repertorio musical para todo tipo de eventos, desde serenatas, cumpleaños, bodas, misas, funerales, etc.
+                    Somos un grupo de <a className={'text-[#F5B83B]'}>mariachi</a>  con mas de 25 años de experiencia, nos caracterizamos por brindar un servicio de calidad y profesionalismo, contamos con un amplio repertorio musical para  todo tipo de eventos, desde serenatas, cumpleaños, bodas, misas, funerales, etc.
                     Nuestro grupo esta conformado por 8 integrantes, 2 trompetas, 2 violines, 1 vihuela, 1 guitarra, 1 guitarron y 1 cantante, todos ellos con una amplia experiencia en el medio.
                 </motion.p>
                 <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants}>
