@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import {useFormik} from "formik";
+import axios from "axios";
 
 const Form = () => {
     const cardVariants = {
@@ -30,7 +31,9 @@ const Form = () => {
             message: ''
         },
         onSubmit: async (values) => {
-            console.log(values);
+
+            const data = await axios.post("api/mail", values);
+            console.log(values, data);
             alert("Mensaje enviado con éxito");
         }
     })
