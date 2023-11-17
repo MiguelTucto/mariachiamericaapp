@@ -1,10 +1,22 @@
 import Provider from "@/components/Provider";
 import "styles/globals.css";
+import Head from "next/head";
 export const metadata = {
     title: "Mariachi America",
     metadataBase: new URL('http://localhost:3000'),
     description: "Mariachi America Ayacucho",
     keywords: "Mariachi America Ayacucho, Mariachi America, Mariachi, Mariachi Ayacucho, Mariachi en Ayacucho, Mariachi en Huamanga, Mariachi en Huanta, Mariachi en Cangallo, Mariachi en La Mar, Mariachi en Lucanas, Mariachi en Parinacochas, Mariachi en Páucar del Sara Sara, Mariachi en Sucre, Mariachi en Ayacucho",
+    icons: {
+        icon: [
+            '/mariachiamerica.ico?v=4',
+        ],
+        apple: [
+            '/mariachiamerica.ico?v=4',
+        ],
+        shortcut: [
+            '/mariachiamerica.ico?v=4',
+        ],
+    },
     authors: [
         {
             name: "Eulogio Tito",
@@ -71,7 +83,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
     return (
-        <html>
+        <html lang={'en'} >
             <body>
                 <Provider>
                     <main>

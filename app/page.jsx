@@ -20,25 +20,25 @@ const Home = () => {
             <section className={'min-h-screen'} id={'hero'}>
                 <Hero />
             </section>
-            <section className={'min-h-screen bg-white'} id={'about'}>
+            <section className={'min-h-screen bg-[#F2ECD5]'} id={'about'}>
                 <About />
             </section>
-            <section className={'min-h-screen bg-blue-50'} id={'takeservice'}>
+            <section className={'min-h-screen bg-[#e3f2fd]'} id={'takeservice'}>
                 <TakeService />
             </section>
             <section className={'h-[500px]  '} id={'contact'} >
                 <PhoneContact />
             </section>
-            <section className={'min-h-screen bg-blue-50'} id={'feature'}>
+            <section className={'min-h-screen bg-[#e3f2fd]'} id={'feature'}>
                 <Feature />
             </section>
-            <section className={'min-h-screen bg-white'} id={'socialnetwork'}>
+            <section className={'min-h-screen bg-[#F2ECD5]'} id={'socialnetwork'}>
                 <SocialNetwork />
             </section>
-            <section className={'h-[500px] bg-blue-50'} id={'contact'}>
+            <section className={'h-[500px] bg-[#e3f2fd]'} id={'contact'}>
                 <Contact />
             </section>
-            <section className={'min-h-screen bg-white'} id={'form'}>
+            <section className={'min-h-screen bg-[#F2ECD5]'} id={'form'}>
                 <Form />
             </section>
             <section className={'h-[300px] bg-gradient-to-l from-blue-700 to-blue-500'} id={'footer'}>

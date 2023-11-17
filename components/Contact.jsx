@@ -26,7 +26,7 @@ const Contact = () => {
                     <motion.p initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'font-sans pt-3 text-justify md:w-[400px] w-[300px] text-[#1F447F] '}>Si deseas ubicarnos y poder conocer más a detalle nuestros servicios, te ofrecemos a que nos visites en nuestro local</motion.p>
                 </div>
                 <div className={''}>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d588.7544907649707!2d-74.22766078931178!3d-13.15468632081334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91127df04bce72b5%3A0xf0a9c97c8dafb93f!2sMariachi%20Am%C3%A9rica%20Ayacucho!5e0!3m2!1ses-419!2spe!4v1684173743187!5m2!1ses-419!2spe" className="object-cover md:h-full h-[450px] md:w-[1000px] w-full"   allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d588.7544907649707!2d-74.22766078931178!3d-13.15468632081334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91127df04bce72b5%3A0xf0a9c97c8dafb93f!2sMariachi%20Am%C3%A9rica%20Ayacucho!5e0!3m2!1ses-419!2spe!4v1684173743187!5m2!1ses-419!2spe" className="object-cover md:h-full h-[450px] md:w-[1000px] w-full" title={'Mariachi Google Map Location'}  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </>

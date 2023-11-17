@@ -25,7 +25,7 @@ const SocialNetwork = () => {
     return (
         <>
             <div className={'w-full flex flex-col justify-center items-center'}>
-                <div className={'md:bg-gradient-to-b md:from-blue-50  md:w-7/12 w-full md:px-0 px-5 h-32 -mt-16 flex  justify-between items-center'}>
+                <div className={'md:bg-gradient-to-b md:from-[#e3f2fd]  md:w-7/12 w-full md:px-0 px-5 h-32 -mt-16 flex  justify-between items-center'}>
                     <Link href={'https://www.facebook.com/MariachiAmericaAyacucho'} className={'relative'}>
                         <FontAwesomeIcon beat={true} icon={faFacebook}  className={'md:text-8xl text-5xl text-[#3b5998]'}  />
                     </Link>

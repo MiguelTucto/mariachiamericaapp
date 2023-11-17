@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import {useFormik} from "formik";
 import axios from "axios";
+import {useState} from "react";
 
 const Form = () => {
+    const [loading, setLoading] = useState(false);
+
     const cardVariants = {
         offscreen: {
             y: 300,
@@ -31,10 +34,19 @@ const Form = () => {
             message: ''
         },
         onSubmit: async (values) => {
+            setLoading(true);
+            try {
 
-            const data = await axios.post("api/mail", values);
-            console.log(values, data);
-            alert("Mensaje enviado con éxito");
+                await axios.post("api/mail", values);
+
+                alert("Mensaje enviado con éxito");
+            } catch (e) {
+                console.log(e);
+            } finally {
+                formik.resetForm();
+                setLoading(false);
+            }
+
         }
     })
 
@@ -89,13 +101,24 @@ const Form = () => {
                         <textarea value={formik.values.message} onChange={formik.handleChange} {...formik.getFieldProps('message')} id="message" name="message" rows={4} className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
                     </div>
                     <div className="mt-6">
-                        <button type="submit" className="flex items-center justify-between py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                            Enviar
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 font-bold">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                            </svg>
-
-                        </button>
+                        {
+                            loading
+                                ?
+                                <>
+                                    <button disabled={true} type="submit" className="flex items-center justify-between py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 cursor-not-allowed  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                        Enviando...
+                                    </button>
+                                </>
+                                :
+                                <>
+                                    <button type="submit" className="flex items-center justify-between py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                        Enviar
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 font-bold">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                        </svg>
+                                    </button>
+                                </>
+                        }
                     </div>
                 </form>
             </div>
