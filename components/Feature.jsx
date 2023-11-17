@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Photo from '../public/featuremariachiphoto.jpg'
+import Photo from '../public/featuremariachiphoto.webp';
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -22,7 +22,7 @@ const Feature = () => {
     };
     return (
         <>
-            <div className={'md:px-80 md:pt-[100px] px-10 pt-5 pb-12 '}>
+            <div className={'md:px-80 md:pt-[20px] px-10 pt-5 pb-12 '}>
                 <motion.h2 initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'font-bold md:text-8xl text-5xl text-[#F5B83B]'}>Nos representa como grupo</motion.h2>
                 <div className={'flex md:flex-row flex-col items-center justify-between  mt-9'}>
                     <div className={'flex flex-col gap-10 items-center h-full'}>
@@ -32,7 +32,7 @@ const Feature = () => {
                             </svg>
                             <div className={'w-full'}>
                                 <h3 className={'font-bold text-xl text-[#1F447F]'}>Profesionalismo</h3>
-                                <h4 className={'font-sans text-[#1F447F]'}>Aqui encontraras buenas servicios</h4>
+                                <p className={'font-sans text-[#1F447F] w-[250px] text-justify'}>Ofrecer un show de calidad y profesional, es lo que nos caracteriza. Desde la primera melodía interpretada, hasta el show que brindamos.</p>
                             </div>
 
                         </motion.div>
@@ -42,7 +42,7 @@ const Feature = () => {
                             </svg>
                             <div className={'w-full'}>
                                 <h3 className={'font-bold text-xl text-[#1F447F]'}>Variedad Musical</h3>
-                                <h4 className={'font-sans text-[#1F447F]'}>Aqui encontraras buenas servicios</h4>
+                                <p className={'font-sans text-[#1F447F] w-[250px] text-justify'}>Contamos con un amplio repertorio musical. Pide tu canción favorita, nosotros con mucho gusto la interpretaremos.</p>
                             </div>
                         </motion.div>
                         <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'flex flex-row items-center gap-4'}>
@@ -51,7 +51,7 @@ const Feature = () => {
                             </svg>
                             <div className={'w-full'}>
                                 <h3 className={'font-bold text-xl text-[#1F447F]'}>Todos los lugares</h3>
-                                <h4 className={'font-sans text-[#1F447F]'}>Aqui encontraras buenas servicios</h4>
+                                <p className={'font-sans text-[#1F447F] w-[250px] text-justify'}>Mariachi America Ayacucho llega a todos los lugares que nuestros clientes soliciten. Desde hace 25 años que llegamos a todas las personas.</p>
                             </div>
                         </motion.div>
                         <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants}>

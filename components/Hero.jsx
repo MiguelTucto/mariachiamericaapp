@@ -1,6 +1,6 @@
 import Image from "next/image";
 import mariachi from "@/public/mariachiamericagroup.webp";
-import logo from "@/public/logov1-bgremoved.png";
+import logo from "@/public/logov1-bgremoved.webp";
 import {useEffect, useState} from "react";
 import Link from "next/link";
 
@@ -30,16 +30,16 @@ const Hero = () => {
                 alt={'Mariachi America Group'}
                 className={'object-cover -z-10'}
                 layout={'fill'}
-
             />
             <nav className={`w-full  flex justify-center fixed  ${scrolled ? 'bg-gradient-to-l from-blue-700 to-blue-500 shadow-2xl ease-in duration-700 justify-between md:px-80 items-center px-5 z-10 ' : ' duration-700'} `} >
                 <Link href={'#'}>
                     <Image src={logo} alt={'Logo Mariachi'} className={`w-[250px] h-[70px]  md:w-[450px] md:h-[130px] ${scrolled ? 'md:w-[450px] md:h-[130px]' : ''}`} />
                 </Link>
                 <div className={`${scrolled ? '  gap-5 md:block hidden ' : 'hidden'}`}>
-                    <Link href={'#'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Inicio</Link>
                     <Link href={'#about'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Nosotros</Link>
+                    <Link href={'#takeservice'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Contratar</Link>
                     <Link href={'#feature'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Características</Link>
+                    <Link href={'#contact'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Ubícanos</Link>
                     <Link href={'#socialnetwork'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Videoclips</Link>
                     <Link href={'#form'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Cotización</Link>
                 </div>
@@ -52,11 +52,12 @@ const Hero = () => {
                     isMenuOpen ? (
                         <div className={`fixed top-0 left-0 w-full h-full bg-blue-500 bg-opacity-90 flex justify-center items-center z-50`}>
                             <div className={`flex flex-col gap-5 text-center`}>
-                                <Link href={'#'} className={`font-satoshi font-bold text-xl text-yellow-200 ${scrolled ? 'text-2xl mr-5' : ''}`}>Inicio</Link>
-                                <Link href={'#about'} className={`font-satoshi font-bold text-xl text-yellow-200 ${scrolled ? 'text-2xl mr-5' : ''}`}>Nosotros</Link>
-                                <Link href={'#feature'} className={`font-satoshi font-bold text-xl text-yellow-200 ${scrolled ? 'text-2xl mr-5' : ''}`}>Características</Link>
-                                <Link href={'#socialnetwork'} className={`font-satoshi font-bold text-xl text-yellow-200 ${scrolled ? 'text-2xl mr-5' : ''}`}>Videoclips</Link>
-                                <Link href={'#form'} className={`font-satoshi font-bold text-xl text-yellow-200 ${scrolled ? 'text-2xl mr-5' : ''}`}>Cotización</Link>
+                                <Link href={'#about'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Nosotros</Link>
+                                <Link href={'#takeservice'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Contratar</Link>
+                                <Link href={'#feature'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Características</Link>
+                                <Link href={'#contact'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Ubícanos</Link>
+                                <Link href={'#socialnetwork'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Videoclips</Link>
+                                <Link href={'#form'} className={`font-satoshi font-bold text-xl text-[#F5B83B] ${scrolled ? 'text-2xl mr-5' : ''}`}>Cotización</Link>
                             </div>
                             <i className={`absolute top-0 right-0 mt-5 mr-5`} onClick={() => {setIsMenuOpen(false)}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={`w-6 h-6 text-yellow-200`}>

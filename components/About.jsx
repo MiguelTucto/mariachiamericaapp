@@ -35,7 +35,7 @@ const About = () => {
                     Nuestro grupo esta conformado por 8 integrantes, 2 trompetas, 2 violines, 1 vihuela, 1 guitarra, 1 guitarron y 1 cantante, todos ellos con una amplia experiencia en el medio.
                 </motion.p>
                 <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants}>
-                    <Image src={Photo} alt={'Mariachi America About Photo'} className={'md:mt-10 mt-5 rounded-md'} layout={'responsive'} width={100} height={100} onClick={() => setOnClose(!onClose)} />
+                    <Image src={Photo} alt={'Mariachi America About Photo'} className={'md:mt-10 mt-5 rounded-md'}  onClick={() => setOnClose(!onClose)} />
                 </motion.div>
                 {
                     onClose ? (

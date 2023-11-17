@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/public/logov1-bgremoved.png";
+import logo from "@/public/logov1-bgremoved.webp";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faInstagram, faWhatsapp, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
@@ -10,10 +10,9 @@ const Footer = () => {
             <div className={'md:px-80 px-10 md:py-0 py-5  h-full flex md:flex-row flex-col justify-between items-center'}>
                     <Link href={'#'}>
                         <Image src={logo} alt={'Logo Mariachi'} className={'w-[300px] h-[80px]  md:w-[450px] md:h-[130px]'} />
-
                     </Link>
                     <div className={'flex '}>
-                        <p className={'text-white'}>© 2021 Mariachi America. All rights reserved.</p>
+                        <p className={'text-white font-black'}>© 2023 Mariachi America Ayacucho.</p>
 
                     </div>
                     <div className={'flex flex-row gap-10 md:px-0 '}>

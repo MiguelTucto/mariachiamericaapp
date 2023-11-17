@@ -1,8 +1,10 @@
-import {faWhatsapp} from "@fortawesome/free-brands-svg-icons";
+import {faWhatsapp, faWhatsappSquare} from "@fortawesome/free-brands-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFileSignature, faPhone} from "@fortawesome/free-solid-svg-icons";
+import {faFileSignature, faPhone, faPhoneSquare, faPhoneSquareAlt} from "@fortawesome/free-solid-svg-icons";
 import {useRef} from "react";
 import {motion} from "framer-motion";
+import Link from "next/link";
+import { Tooltip } from "@nextui-org/react";
 
 const TakeService = () => {
     const text = useRef(null);
@@ -33,11 +35,22 @@ const TakeService = () => {
                     <motion.p initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants} className={'text-justify font-sans pt-10 text-[#1F447F]'}>En Mariachi America Ayacucho, nos enorgullece ofrecer múltiples opciones de contratación para garantizar que tu experiencia sea lo más sencilla y profesional posible. Nuestra extensa experiencia y profesionalismo nos permiten adaptarnos a tus necesidades y preferencias, sin importar la naturaleza de tu evento. Ya sea una boda, un cumpleaños, una fiesta corporativa o cualquier otra celebración, estamos listos para hacer que sea memorable.
                         Contáctanos de la manera que mejor se adapte a tu estilo y horarios, y descubre por qué Mariachi America Ayacucho es la elección preferida para quienes buscan la auténtica esencia del mariachi. ¡Te esperamos con los brazos abiertos para ser parte de tu ocasión especial!</motion.p>
                 </div>
-                <div className={'flex flex-row  justify-between h-[400px] md:px-20 px-5 text-[#1F447F] items-center'}>
+                <div className={'flex md:flex-row flex-col  justify-between h-[400px] md:px-20 px-5 text-[#1F447F] items-center'}>
                     <div className={'group/whatsapp  ease-in duration-300 hover:scale-150   h-full flex flex-col justify-center md:p-10 p-3 text-center'}>
                         {/*<p className={'w-52 text-justify'}>Escríbenos por Whatsapp para obtener una conversación más fluida y así concretar sin ningún problema. </p>*/}
                         <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants}>
-                            <FontAwesomeIcon  icon={faWhatsapp}  className={'md:text-9xl text-5xl group-hover/whatsapp:text-[#25D366]'} />
+                            <Link href={'https://wa.me/51918514737'}>
+                                <Tooltip
+                                    placement={'top'}
+                                    content={
+                                        <div className={'flex flex-col items-center mb-10'}>
+                                            <p className={' font-black [#1F447F]'}>Whatsapp</p>
+                                        </div>
+                                    }
+                                >
+                                    <FontAwesomeIcon  icon={faWhatsappSquare}  className={'md:text-9xl text-7xl group-hover/whatsapp:text-[#25D366]'} />
+                                </Tooltip>
+                            </Link>
                         </motion.div>
                     </div>
                     <div  className={'group/phone  ease-in duration-300 hover:scale-150  h-full flex flex-col justify-center md:p-10 p-3 text-center'}>
@@ -53,14 +66,35 @@ const TakeService = () => {
                         </ul>
                         */}
                         <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants}>
-                            <FontAwesomeIcon  icon={faPhone}  className={'group-hover/phone:text-blue-500 md:text-9xl text-5xl '} />
+                            <Link href={'tel:+51918514737'}>
+                                <Tooltip
+                                    placement={'top'}
+                                    content={
+                                        <div className={'flex flex-col items-center mb-10'}>
+                                            <p className={' font-black [#1F447F]'}>Celular</p>
+                                        </div>
+                                    }
+                                >
+                                    <FontAwesomeIcon  icon={faPhoneSquare}  className={'group-hover/phone:text-blue-500 md:text-9xl text-7xl '} />
+                                </Tooltip>
+                            </Link>
                         </motion.div>
                     </div>
                     <div  className={'group/form ease-in duration-300 hover:scale-150  h-full flex flex-col justify-center md:p-10 p-3 text-center'}>
                         {/*<p className={'w-52 text-justify'}>Completa nuestra formulario con los datos correspondientes y nosotros nos contactaremos a la brevedad posible. </p>*/}
                         <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants}>
-                            <FontAwesomeIcon icon={faFileSignature} className={'group-hover/form:text-[#F5B83B] md:text-9xl text-5xl '} />
-
+                            <Link href={'#form'}>
+                                <Tooltip
+                                    placement={'top'}
+                                    content={
+                                        <div className={'flex flex-col items-center mb-10'}>
+                                            <p className={' font-black [#1F447F]'}>Complete el formulario</p>
+                                        </div>
+                                    }
+                                >
+                                    <FontAwesomeIcon icon={faFileSignature} className={'group-hover/form:text-[#F5B83B] md:text-9xl text-7xl md:ml-0 ml-7'} />
+                                </Tooltip>
+                            </Link>
                         </motion.div>
                     </div>
                 </div>
