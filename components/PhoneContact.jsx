@@ -8,7 +8,7 @@ const PhoneContact = () => {
 
     const cardVariants = {
         offscreen: {
-            x: 100,
+            x: 50,
             opacity: 0,
 
         },
@@ -26,7 +26,7 @@ const PhoneContact = () => {
 
     const cardVariantTwo = {
         offscreen: {
-            x: -100,
+            x: -50,
             opacity: 0,
 
         },
@@ -47,18 +47,13 @@ const PhoneContact = () => {
         <>
 
             <div
-                className={'h-full bg-fixed  md:px-80 md:py-[100px] px-10 py-5 '}
+                className={'h-full bg-fixed  md:px-80 md:py-[100px] px-10 py-5 bg-blue-900'}
                 style={{
-                    backgroundImage: `url(${mariachi.src})`,
-
+                    backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/mariachiamericagroupsection.webp")',
+                    backgroundColor: '#1F447F',
                 }}
                 ref={text}
             >
-                <div
-                    className={'bg-blue-900 w-full h-[500px] absolute md:-ml-[340px] -ml-[44px] md:-mt-[100px] -mt-[20px] opacity-50 ' }
-                >
-
-                </div>
                 <h2 className={'text-[#F5B83B] font-bold md:text-8xl text-5xl sticky'}>Contrata a los mejores mariachis de Ayacucho</h2>
                 <ul className={'flex flex-row sticky mt-20 w-full justify-between md:px-52 px-0'}>
                     <motion.li initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariantTwo} className={'py-2 px-2  border border-transparent shadow-sm text-sm rounded-md bg-[#F5B83B] hover:text-white font-black text-[#1F447F] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'}>

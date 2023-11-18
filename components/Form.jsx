@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import {useFormik} from "formik";
 import axios from "axios";
 import {useState} from "react";
-
+import * as Yup from "yup";
 const Form = () => {
     const [loading, setLoading] = useState(false);
 
@@ -33,6 +33,36 @@ const Form = () => {
             time: '',
             message: ''
         },
+        validationSchema: Yup.object({
+            name: Yup.string()
+                .required('Campo Requerido')
+                .min(3, 'El nombre debe tener al menos 3 caracteres')
+                .max(30, 'El nombre debe tener como máximo 30 caracteres'),
+            email: Yup.string()
+                .email('Correo inválido')
+                .required('Campo Requerido'),
+            phone: Yup.string()
+                .required('Campo Requerido')
+                .max(9, 'El número debe tener como máximo 9 caracteres')
+                .min(9, 'El número debe tener como mínimo 9 caracteres')
+                .matches(/^[0-9]+$/, "Solo se aceptan números"),
+            location: Yup.string()
+                .required('Campo Requerido')
+                .max(50, 'La dirección debe tener como máximo 50 caracteres'),
+            date: Yup.date()
+                .required('Campo Requerido')
+                /*.min(new Date(), 'La fecha debe ser mayor a la actual')
+                .max(new Date('2023-12-31'), 'La fecha debe ser menor al 31 de Diciembre del 2023')*/,
+            typeOfShows: Yup.string()
+                .required('Campo Requerido'),
+            time: Yup.string()
+                .required('Campo Requerido'),
+            message: Yup.string()
+                .required('Campo Requerido')
+                .min(10, 'El mensaje debe tener al menos 10 caracteres')
+                .max(300, 'El mensaje debe tener como máximo 100 caracteres')
+
+        }),
         onSubmit: async (values) => {
             setLoading(true);
             try {
@@ -61,23 +91,43 @@ const Form = () => {
                     <div className={'w-full'}>
                         <label htmlFor="name" className="block text-xl font-medium text-gray-700">Nombre</label>
                         <input value={formik.values.name} onChange={formik.handleChange} {...formik.getFieldProps('name')} type="text" name="name" id="name" autoComplete="given-name" className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                        {
+                            formik.touched.name && formik.errors.name ? (
+                                <p className={'text-red-500'}>{formik.errors.name}</p>) : null
+                        }
                     </div>
                     <div className="mt-6 w-full">
                         <label htmlFor="email" className="block text-xl font-medium text-gray-700">Correo</label>
                         <input value={formik.values.email} onChange={formik.handleChange} {...formik.getFieldProps('email')} type="email" name="email" id="email" autoComplete="email" className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                        {
+                            formik.touched.email && formik.errors.email ? (
+                                <p className={'text-red-500'}>{formik.errors.email}</p>) : null
+                        }
                     </div>
                     <div className="mt-6 w-full">
                         <label htmlFor="phone" className="block text-xl font-medium text-gray-700">Telefono</label>
-                        <input value={formik.values.phone} onChange={formik.handleChange} {...formik.getFieldProps('phone')} type="text" name="phone" id="phone" autoComplete="phone" className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                        <input value={formik.values.phone} onChange={formik.handleChange} {...formik.getFieldProps('phone')} type="tel" placeholder="999-999-999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxLength={9} name="phone" id="phone" autoComplete="phone" className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                        {
+                            formik.touched.phone && formik.errors.phone ? (
+                                <p className={'text-red-500'}>{formik.errors.phone}</p>) : null
+                        }
                     </div>
                     <div className={'mt-6 w-full'}>
                         <label htmlFor="location" className="block text-xl font-medium text-gray-700">Dirección</label>
                         <input value={formik.values.location} onChange={formik.handleChange} {...formik.getFieldProps('location')} type="text" name="location" id="location" autoComplete="location" className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                        {
+                            formik.touched.location && formik.errors.location ? (
+                                <p className={'text-red-500'}>{formik.errors.location}</p>) : null
+                        }
                     </div>
                     <div className={'md:mt-6 mt-3  flex md:flex-row flex-col justify-between w-full '}>
                         <div className={''}>
                             <label htmlFor="date" className="block text-xl font-medium text-gray-700">Fecha</label>
                             <input value={formik.values.date} onChange={formik.handleChange} {...formik.getFieldProps('date')} type="date" name="date" id="date" autoComplete="date" className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                            {
+                                formik.touched.date && formik.errors.date ? (
+                                    <p className={'text-red-500'}>{formik.errors.date}</p>) : null
+                            }
                         </div>
                         <div className={'md:mt-0 mt-6'}>
                             <label htmlFor="typeOfShows" className="block text-xl font-medium text-gray-700">Tipo de Evento</label>
@@ -94,15 +144,23 @@ const Form = () => {
                         <div className={'md:mt-0 mt-6'}>
                             <label htmlFor="time" className="block text-xl font-medium text-gray-700">Hora</label>
                             <input value={formik.values.time} onChange={formik.handleChange} {...formik.getFieldProps('time')} type="time" name="time" id="time" autoComplete="time" className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                            {
+                                formik.touched.time && formik.errors.time ? (
+                                    <p className={'text-red-500'}>{formik.errors.time}</p>) : null
+                            }
                         </div>
                     </div>
                     <div className="mt-6 w-full">
                         <label htmlFor="message" className="block text-xl font-medium text-gray-700">Mensaje</label>
                         <textarea value={formik.values.message} onChange={formik.handleChange} {...formik.getFieldProps('message')} id="message" name="message" rows={4} className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"/>
+                        {
+                            formik.touched.message && formik.errors.message ? (
+                                <p className={'text-red-500'}>{formik.errors.message}</p>) : null
+                        }
                     </div>
                     <div className="mt-6">
                         {
-                            loading
+                            (loading )
                                 ?
                                 <>
                                     <button disabled={true} type="submit" className="flex items-center justify-between py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 cursor-not-allowed  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
