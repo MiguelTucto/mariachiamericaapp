@@ -47,10 +47,9 @@ const PhoneContact = () => {
         <>
 
             <div
-                className={'h-full bg-fixed  md:px-80 md:py-[100px] px-10 py-5 bg-blue-900'}
+                className={'h-full bg-fixed  md:px-80 md:py-[100px] px-10 py-5 '}
                 style={{
                     backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/mariachiamericagroupsection.webp")',
-                    backgroundColor: '#1F447F',
                 }}
                 ref={text}
             >
