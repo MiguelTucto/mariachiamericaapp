@@ -8,7 +8,7 @@ const PhoneContact = () => {
 
     const cardVariants = {
         offscreen: {
-            x: 50,
+            x: 20,
             opacity: 0,
 
         },

@@ -28,8 +28,19 @@ const Hero = () => {
             <Image
                 src={mariachi}
                 alt={'Mariachi America Group'}
-                className={'object-cover h-full max-h-full -z-10'}
-                layout={'fill'}
+                priority={true}
+                quality={100}
+                style={{
+                    position: 'absolute',
+                    zIndex: '-1',
+                    top: '0',
+                    left: '0',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                }}
+
             />
             <nav className={`w-full  flex justify-center fixed  ${scrolled ? 'bg-gradient-to-l from-blue-700 to-blue-500 shadow-2xl ease-in duration-700 justify-between md:px-80 items-center px-5 z-10 ' : ' duration-700'} `} >
                 <Link href={'#'}>
