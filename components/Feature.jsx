@@ -2,8 +2,12 @@ import Image from "next/image";
 import Photo from '../public/featuremariachiphoto.webp';
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {useState} from "react";
+import Modal from "@/components/Modal";
 
 const Feature = () => {
+    const [onClose, setOnClose] = useState(false);
+
     const cardVariants = {
         offscreen: {
             y: 300,
@@ -64,8 +68,23 @@ const Feature = () => {
                         </motion.div>
                     </div>
                     <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariants}>
-                        <Image src={Photo} alt={'Mariachi America'} className={' mt-5 rounded-md '} width={750}   />
+                        <Image src={Photo} alt={'Mariachi America'} className={' mt-5 rounded-md cursor-pointer'} width={750}  onClick={() => setOnClose(!onClose)} />
                     </motion.div>
+                    {
+                        onClose
+                        ?
+                            (
+                                <>
+                                    <Modal setOnClose={setOnClose} >
+                                        <Image src={Photo} alt={'Mariachi America'} className={'md:mt-32 mt-28 md:px-0 px-5 rounded-md md:w-full md:h-full w-full object-contain  h-[500px] md:pr-20 md:pl-20 md:pb-52'}  />
+                                    </Modal>
+                                </>
+                            )
+                        :
+                            (
+                                <></>
+                            )
+                    }
                 </div>
             </div>
         </>
