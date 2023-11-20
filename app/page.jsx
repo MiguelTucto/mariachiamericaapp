@@ -17,7 +17,7 @@ const Home = () => {
 
     return (
         <>
-            <section className={'min-h-screen'} id={'hero'}>
+            <section className={'max-h-full h-screen'} id={'hero'}>
                 <Hero />
             </section>
             <section className={'min-h-screen bg-[#F0F0F0]'} id={'about'}>

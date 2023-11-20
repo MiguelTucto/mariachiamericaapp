@@ -46,13 +46,26 @@ const PhoneContact = () => {
     return (
         <>
 
-            <div
-                className={'h-full bg-fixed  md:px-80 md:py-[100px] px-10 py-5 '}
+            <Image
+                src={mariachi}
+                alt={'Mariachi America Group'}
+                quality={100}
+
                 style={{
-                    backgroundImage: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/mariachiamericagroupsection.webp")',
+                    filter: 'brightness(0.5)',
+                    position: 'fixed',
+                    zIndex: '-2',
+                    top: '0',
+                    left: '0',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+
                 }}
                 ref={text}
-            >
+            />
+            <div className={'md:px-80 md:py-[50px] px-10 py-5'}>
                 <h2 className={'text-[#F5B83B] font-bold md:text-8xl text-5xl sticky'}>Contrata a los mejores mariachis de Ayacucho</h2>
                 <ul className={'flex flex-row sticky mt-20 w-full justify-between md:px-52 px-0'}>
                     <motion.li initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.1}} variants={cardVariantTwo} className={'py-2 px-2  border border-transparent shadow-sm text-sm rounded-md bg-[#F5B83B] hover:text-white font-black text-[#1F447F] hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'}>
@@ -63,9 +76,6 @@ const PhoneContact = () => {
                     </motion.li>
                 </ul>
             </div>
-
-
-
         </>
     )
 }
