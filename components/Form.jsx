@@ -45,7 +45,7 @@ const Form = () => {
                 .required('Campo Requerido')
                 .max(9, 'El número debe tener como máximo 9 caracteres')
                 .min(9, 'El número debe tener como mínimo 9 caracteres')
-                .matches(/^[0-9]+$/, "Solo se aceptan números"),
+                .matches(/^[0-9]+$/, "Solo se permiten números"),
             location: Yup.string()
                 .required('Campo Requerido')
                 .max(50, 'La dirección debe tener como máximo 50 caracteres'),
@@ -106,7 +106,7 @@ const Form = () => {
                     </div>
                     <div className="mt-6 w-full">
                         <label htmlFor="phone" className="block text-xl font-medium text-gray-700">Telefono</label>
-                        <input value={formik.values.phone} onChange={formik.handleChange} {...formik.getFieldProps('phone')} type="tel" placeholder="999-999-999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxLength={9} name="phone" id="phone" autoComplete="phone" className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+                        <input value={formik.values.phone} onChange={formik.handleChange} {...formik.getFieldProps('phone')} type="tel" placeholder="999-999-999" pattern="[0-9]{9}" maxLength={9} name="phone" id="phone" autoComplete="phone" className="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                         {
                             formik.touched.phone && formik.errors.phone ? (
                                 <p className={'text-red-500'}>{formik.errors.phone}</p>) : null

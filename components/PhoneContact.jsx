@@ -1,5 +1,5 @@
 import Image from "next/image";
-import mariachi from "@/public/mariachiamericagroupsection.webp";
+import mariachi from "@/public/mariachiamericagroup.webp";
 import { motion, Variants } from "framer-motion";
 import {useRef} from "react";
 
@@ -50,7 +50,6 @@ const PhoneContact = () => {
                 src={mariachi}
                 alt={'Mariachi America Group'}
                 quality={100}
-
                 style={{
                     filter: 'brightness(0.5)',
                     position: 'fixed',
